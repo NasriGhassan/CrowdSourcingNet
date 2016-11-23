@@ -1,0 +1,291 @@
+﻿@{
+    Layout = "~/Views/Shared/_template.cshtml";
+
+}
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>Manage Users</h3>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Users List <small>Users Only</small></h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                                        <li><a class="close-link"><i class="fa fa-close"></i></a></li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <table id="users_table" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Photo</th>
+                                                <th>Full Name</th>
+                                                <th>E-mail</th>
+                                                <th>G</th>
+                                                <th>Registred</th>
+                                                <th>Last Seen</th>
+                                                <th>Status</th>
+                                                <th>N*I</th>
+                                                <th>N*C</th>
+                                                <th>N*P</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><img src="images/raed.jpg" class="avatar" alt="Avatar"></td>
+                                                <td>Raed Bettaieb</td>
+                                                <td>raedbettaieb@yahoo.fr</td>
+                                                <td>M</td>
+                                                <td>2011/04/25</td>
+                                                <td>2016/09/02</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-success btn-xs">Online</button>
+                                                </td>
+                                                <td>5</td>
+                                                <td>67</td>
+                                                <td>6000</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-folder"></i> View </button> <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a> <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Reviewers List <small>Reviewers Only</small></h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                                        <li><a class="close-link"><i class="fa fa-close"></i></a></li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <table id="reviewers_table" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Photo</th>
+                                                <th>Full Name</th>
+                                                <th>E-mail</th>
+                                                <th>Last Seen</th>
+                                                <th>Status</th>
+                                                <th>N*I</th>
+                                                <th>N*R</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><img src="images/user.png" class="avatar" alt="Avatar"></td>
+                                                <td>Armin</td>
+                                                <td>armin@yahoo.fr</td>
+                                                <td>2011/04/25</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-success btn-xs">Online</button>
+                                                </td>
+                                                <td>5</td>
+                                                <td>67</td>
+                                                <td> <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a> <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a> <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a> </td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="images/user.png" class="avatar" alt="Avatar"></td>
+                                                <td>Temester</td>
+                                                <td>temester@yahoo.fr</td>
+                                                <td>2011/04/25</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-danger btn-xs">Offline</button>
+                                                </td>
+                                                <td>5</td>
+                                                <td>67</td>
+                                                <td> <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a> <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a> <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a> </td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="images/user.png" class="avatar" alt="Avatar"></td>
+                                                <td>Weld el yah</td>
+                                                <td>yahyewi@yahoo.fr</td>
+                                                <td>2011/04/25</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-dark btn-xs">Banned</button>
+                                                </td>
+                                                <td>5</td>
+                                                <td>67</td>
+                                                <td> <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a> <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a> <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a> </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Large Modal -->
+                        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> </button>
+                                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h4>Text in a modal</h4>
+                                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                                        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Large Modal -->
+                    </div>
+                </div>
+            </div>
+            <!-- /page content -->
+            @section script
+{
+    <!-- jQuery -->
+    <script src="@Url.Content("~/Content/golden/")vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="@Url.Content("~/Content/golden/")vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="@Url.Content("~/Content/golden/")vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="@Url.Content("~/Content/golden/")vendors/nprogress/nprogress.js"></script>
+    <!-- iCheck -->
+    <script src="@Url.Content("~/Content/golden/")vendors/iCheck/icheck.min.js"></script>
+    <!-- Datatables -->
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-scroller/js/datatables.scroller.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/jszip/dist/jszip.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/pdfmake/build/vfs_fonts.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="@Url.Content("~/Content/golden/")build/js/custom.min.js"></script>
+    <!-- Datatables -->
+    <script>
+        $(document).ready(function () {
+            var handleUsersButtons = function () {
+                if ($("#users_table").length) {
+                    $("#users_table").DataTable({
+                        dom: "Bfrtip"
+                        , buttons: [
+                            {
+                                extend: "copy"
+                                , className: "btn-sm"
+                }
+                            , {
+                                extend: "csv"
+                                , className: "btn-sm"
+                }
+                            , {
+                                extend: "excel"
+                                , className: "btn-sm"
+                }
+                            , {
+                                extend: "pdfHtml5"
+                                , className: "btn-sm"
+                }
+                            , {
+                                extend: "print"
+                                , className: "btn-sm"
+                }
+              , ]
+                        , responsive: true
+                    });
+                }
+            };
+            var handleReviewersButtons = function () {
+                if ($("#reviewers_table").length) {
+                    $("#reviewers_table").DataTable({
+                        dom: "Bfrtip"
+                        , buttons: [
+                            {
+                                extend: "copy"
+                                , className: "btn-sm"
+                }
+                            , {
+                                extend: "csv"
+                                , className: "btn-sm"
+                }
+                            , {
+                                extend: "excel"
+                                , className: "btn-sm"
+                }
+                            , {
+                                extend: "pdfHtml5"
+                                , className: "btn-sm"
+                }
+                            , {
+                                extend: "print"
+                                , className: "btn-sm"
+                }
+              , ]
+                        , responsive: true
+                    });
+                }
+            };
+            TableManageButtons = function () {
+                "use strict";
+                return {
+                    init: function () {
+                        handleUsersButtons();
+                        handleReviewersButtons();
+                    }
+                };
+            }();
+            $('#datatable').dataTable();
+            $('#datatable-keytable').DataTable({
+                keys: true
+            });
+            $('#datatable-scroller').DataTable({
+                ajax: "js/datatables/json/scroller-demo.json"
+                , deferRender: true
+                , scrollY: 380
+                , scrollCollapse: true
+                , scroller: true
+            });
+            $('#datatable-fixed-header').DataTable({
+                fixedHeader: true
+            });
+            var $datatable = $('#datatable-checkbox');
+            $datatable.dataTable({
+                'order': [[1, 'asc']]
+                , 'columnDefs': [
+                    {
+                        orderable: false
+                        , targets: [0]
+                    }
+          ]
+            });
+            $datatable.on('draw.dt', function () {
+                $('input').iCheck({
+                    checkboxClass: 'icheckbox_flat-green'
+                });
+            });
+            TableManageButtons.init();
+        });
+    </script>
+    <!-- /Datatables -->
+}

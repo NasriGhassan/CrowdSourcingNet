@@ -1,0 +1,176 @@
+﻿@{
+    Layout = "~/Views/Shared/_template.cshtml";
+
+}
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>Manage Categories</h3>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Categories List <small></small></h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <table id="categories_table" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Ideas</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Location</td>
+                                    <td>36</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-folder"></i> View </button> <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a> <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- /Large Modal -->
+            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> </button>
+                            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                        </div>
+                        <div class="modal-body">
+                            <h4>Text in a modal</h4>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Large Modal -->
+        </div>
+    </div>
+</div>
+<!-- /page content -->
+@section script
+{
+    <!-- jQuery -->
+    <script src="@Url.Content("~/Content/golden/")vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="@Url.Content("~/Content/golden/")vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="@Url.Content("~/Content/golden/")vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="@Url.Content("~/Content/golden/")vendors/nprogress/nprogress.js"></script>
+    <!-- iCheck -->
+    <script src="@Url.Content("~/Content/golden/")vendors/iCheck/icheck.min.js"></script>
+    <!-- Datatables -->
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-scroller/js/datatables.scroller.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/jszip/dist/jszip.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/pdfmake/build/vfs_fonts.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="@Url.Content("~/Content/golden/")build/js/custom.min.js"></script>
+    <!-- Datatables -->
+    <script>
+        $(document).ready(function () {
+            var handleCategoriesButtons = function () {
+                if ($("#categories_table").length) {
+                    $("#categories_table").DataTable({
+                        dom: "Bfrtip"
+                        , buttons: [
+                            {
+                                extend: "copy"
+                                , className: "btn-sm"
+                }
+                            , {
+                                extend: "csv"
+                                , className: "btn-sm"
+                }
+                            , {
+                                extend: "excel"
+                                , className: "btn-sm"
+                }
+                            , {
+                                extend: "pdfHtml5"
+                                , className: "btn-sm"
+                }
+                            , {
+                                extend: "print"
+                                , className: "btn-sm"
+                }
+              , ]
+                        , responsive: true
+                    });
+                }
+            };
+            TableManageButtons = function () {
+                "use strict";
+                return {
+                    init: function () {
+                        handleCategoriesButtons();
+                    }
+                };
+            }();
+            $('#datatable').dataTable();
+            $('#datatable-keytable').DataTable({
+                keys: true
+            });
+            $('#datatable-scroller').DataTable({
+                ajax: "js/datatables/json/scroller-demo.json"
+                , deferRender: true
+                , scrollY: 380
+                , scrollCollapse: true
+                , scroller: true
+            });
+            $('#datatable-fixed-header').DataTable({
+                fixedHeader: true
+            });
+            var $datatable = $('#datatable-checkbox');
+            $datatable.dataTable({
+                'order': [[1, 'asc']]
+                , 'columnDefs': [
+                    {
+                        orderable: false
+                        , targets: [0]
+                    }
+          ]
+            });
+            $datatable.on('draw.dt', function () {
+                $('input').iCheck({
+                    checkboxClass: 'icheckbox_flat-green'
+                });
+            });
+            TableManageButtons.init();
+        });
+    </script>
+    <!-- /Datatables -->
+}

@@ -1,0 +1,205 @@
+﻿@{
+    Layout = "~/Views/Shared/_template.cshtml";
+
+}
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>Manage Categories</h3>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Categories List <small><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target=".bs-add-modal-md"><i class="fa fa-plus"></i> Add </button></small></h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <table id="categories_table" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Ideas</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var c in ViewBag.categories)
+                                {
+                                    <tr>
+                                        <td class="title">@c.name</td>
+                                        <td>@c.ideas.Count</td>
+                                        <td>
+                                            <input type="text" class="id" value="@c.id" hidden>
+                                            <button type="button" class="btn btn-info btn-xs editbutton" data-toggle="modal" data-target=".bs-edit-modal-md"><i class="fa fa-pencil"></i> Edit </button>
+                                            <a href="@Url.Action("Delete/"+@c.id,"Categories")" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                        </td>
+                                    </tr>
+                                    
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- /Add Modal -->
+            <div class="modal fade bs-add-modal-md" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> </button>
+                            <h4 class="modal-title" id="myModalLabel">Add new Category</h4>
+                        </div>
+                        <form class="form-horizontal form-label-left" method="post" action="@Url.Action("Create","Categories")">
+                            <div class="modal-body">
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                        Title <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" name="name" required="required" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button name="add" type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /Add Modal -->
+
+            <!-- /Edit Modal -->
+            <div class="modal fade bs-edit-modal-md" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> </button>
+                            <h4 class="modal-title" id="myModalLabel">Edit Category</h4>
+                        </div>
+                        <form class="form-horizontal form-label-left" method="post" action="@Url.Action("Edit","Categories")">
+                            <div class="modal-body">
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                        Title <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input id="id" name="id" type="text" hidden />
+                                        <input id="name" type="text" name="name" required="required" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button name="update" type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /Edit Modal -->
+        </div>
+    </div>
+</div>
+<!-- /page content -->
+@section script
+{
+    <!-- jQuery -->
+    <script src="@Url.Content("~/Content/golden/")vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="@Url.Content("~/Content/golden/")vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="@Url.Content("~/Content/golden/")vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="@Url.Content("~/Content/golden/")vendors/nprogress/nprogress.js"></script>
+    <!-- iCheck -->
+    <script src="@Url.Content("~/Content/golden/")vendors/iCheck/icheck.min.js"></script>
+    <!-- Datatables -->
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/datatables.net-scroller/js/datatables.scroller.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/jszip/dist/jszip.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="@Url.Content("~/Content/golden/")vendors/pdfmake/build/vfs_fonts.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="@Url.Content("~/Content/golden/")build/js/custom.min.js"></script>
+    <!-- Datatables -->
+    <script>
+        $(document).ready(function () {
+            var handleCategoriesButtons = function () {
+                if ($("#categories_table").length) {
+                    $("#categories_table").DataTable({
+                        dom: "Bfrtip"
+                        , buttons: [
+                            {
+                                extend: "copy"
+                                , className: "btn-sm"
+                            }
+                            , {
+                                extend: "csv"
+                                , className: "btn-sm"
+                            }
+                            , {
+                                extend: "excel"
+                                , className: "btn-sm"
+                            }
+                            , {
+                                extend: "pdfHtml5"
+                                , className: "btn-sm"
+                            }
+                            , {
+                                extend: "print"
+                                , className: "btn-sm"
+                            }
+              , ]
+                        , responsive: true
+                    });
+                }
+            };
+            TableManageButtons = function () {
+                "use strict";
+                return {
+                    init: function () {
+                        handleCategoriesButtons();
+                    }
+                };
+            }();
+            TableManageButtons.init();
+            $(".editbutton").click(function () {
+                var $item = $(this).closest("tr") // Finds the closest row <tr> 
+                    .find(".id") // Gets a descendent with class="nr"
+                    .val(); // Retrieves the text within <td>
+                $("#id").val($item);
+                var $item = $(this).closest("tr") // Finds the closest row <tr> 
+                   .find(".title") // Gets a descendent with class="nr"
+                   .html(); // Retrieves the text within <td>
+                $("#name").val($item);
+            });
+        });
+    </script>
+    <!-- /Datatables -->
+}
